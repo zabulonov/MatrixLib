@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Zabulonov.MatrixLib</PackageId>
+    <Authors>Zabulonov</Authors>
+    <Company>Zabulonov</Company>
+    <Product>MatrixLib</Product>
+    <Description>A simple library for working with matrices, contains the basic functionality and api that may be useful to you :)</Description>
+  </PropertyGroup>
+
+</Project>
