@@ -1,15 +1,23 @@
 # About MatrixLib
  A simple library for working with matrices, contains the basic functionality and api that may be useful to you :)
 
+# Changes in the new version 1.0.1
+
+Major changes:
+- **NEW!** MinorMatrix(); <br />
+Returns a new minor matrix from an existing one.
+- **NEW!** isSquare(); <br />
+Returns boolean. Checks whether the matrix is square (rows == columns)
+- Updated the documentation in the readme.
 # Installation
 
 #### Package Manager
 
-NuGet\Install-Package Zabulonov.MatrixLib -Version 1.0.0
+```NuGet\Install-Package Zabulonov.MatrixLib -Version 1.0.1```
 
 #### .NET CLI
 
-dotnet add package Zabulonov.MatrixLib --version 1.0.0
+```dotnet add package Zabulonov.MatrixLib --version 1.0.1```
 
 # Working with the matrix
 
@@ -79,11 +87,23 @@ if (m1[1,1] == m2[1,1])
 ## Functions
 
 Available Functions:
-- Det();
-- Equals();
-- GetHashCode();
-- GetRow(int number);
-- GetColumn(int number);
-- Transpose();
-- ToDoubleArray();
-- CWGetMatrix();
+- **isSquare();** <br />
+Returns boolean. Checks whether the matrix is square (rows == columns)
+- **MinorMatrix();** <br />
+Returns a new minor matrix from an existing one.
+- **Det();**<br />
+Returns a double, determine the current matrix. The matrix must be square!
+- **Equals();**<br />
+Returns boolean. Compares 2 matrices, you can also use the ```==``` operator.
+- **GetHashCode();**<br />
+Returns unique(I hope) hash code
+- **GetRow(int number);**<br />
+Returns the selected row/column as a double array.
+- **GetColumn(int number);**<br />
+Returns the selected row/column as a double array.
+- **Transpose();**<br />
+Returns a new transposed matrix from the current one.
+- **ToDoubleArray();**<br />
+Converts the current matrix to a double array.
+- **CWGetMatrix();**<br />
+Displays the current matrix in the console.
