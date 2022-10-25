@@ -18,7 +18,6 @@ namespace MatrixLib
 
         public double[,] data { get; private set; }
 
-
         // Constructors
 
         /// <summary>
@@ -280,6 +279,18 @@ namespace MatrixLib
         // Methods
 
         /// <summary>
+        /// Checks if a matrix is square, returns true/false
+        /// </summary>
+        /// <returns></returns>
+        public bool isSquare()
+        {
+            if (this.rows == this.columns)
+                return true;
+            else
+                return false;
+        }
+
+        /// <summary>
         /// Returns matrix in Console
         /// </summary>
         public void CWGetMatrix()
@@ -393,26 +404,52 @@ namespace MatrixLib
             return column;
         }
 
-        //public double Minor(int orderRow, int orderColumn)
-        //{
-        //    Matrix matrix = new Matrix(this.rows - orderRow, this.columns - orderColumn);
+        /// <summary>
+        /// Returns new Minor Matrix from this matrix.
+        /// </summary>
+        /// <param name="orderRow">Row Number</param>
+        /// <param name="orderColumn">Column Number</param>
+        /// <returns></returns>
+        public Matrix MinorMatrix(int orderRow, int orderColumn)
+        {
+            if (!isSquare())
+                throw new OperationException();
+            if ((orderRow > this.rows - 1) || (orderColumn > this.columns - 1))
+                throw new GetRowAndColumnsException();
 
-        //    for (int i = 0; i < matrix.rows; i++)
-        //    {
-        //        for (int j = 0; j < matrix.columns; j++)
-        //        {
-        //            Console.WriteLine($"Try: in matrix[{i},{j}] put this[{orderRow + i},{orderColumn + j}]");
-        //            matrix[i, j] = this[orderRow+i,orderColumn+j];
-        //            Console.WriteLine("Done!");
-        //        }
-        //    }
+            Matrix matrix = new Matrix(this.rows, this.columns);
+            Matrix Mmatrix = new Matrix(this.rows - 1, this.columns - 1);
 
+            for (int i = 0; i < matrix.rows; i++)
+            {
+                for (int j = 0; j < matrix.columns; j++)
+                {
+                    if ((i == orderRow) || (j == orderColumn))
+                        matrix[i, j] = 1;
+                }
+            }
 
-        //    matrix.CWGetMatrix();
-        //    Console.WriteLine("---");
-        //    return ; 
-        //}
+            int x = 0;
+            int y = 0;
+            for (int i = 0; i < matrix.rows; i++)
+            {
+
+                for (int j = 0; j < matrix.columns; j++)
+                {
+                    if (matrix[i, j] != 1)
+                    {
+                        Mmatrix[x, y] = this[i, j];
+                        y++;
+                        if (y == Mmatrix.columns)
+                        {
+                            y = 0;
+                            x++;
+                        }
+                    }
+                }
+            }
+            return Mmatrix;
+        }
+
     }
 }
-
-

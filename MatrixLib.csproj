@@ -9,6 +9,25 @@
     <Company>Zabulonov</Company>
     <Product>MatrixLib</Product>
     <Description>A simple library for working with matrices, contains the basic functionality and api that may be useful to you :)</Description>
+    <PackageProjectUrl>https://github.com/zabulonov/MatrixLib</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/zabulonov/MatrixLib</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Matrix</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.jpg</PackageIcon>
+    <PackageReleaseNotes>Add MinorMatrix() and isSquare(); Updated the documentation on github</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="icon.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
