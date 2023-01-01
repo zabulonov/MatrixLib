@@ -451,5 +451,38 @@ namespace MatrixLib
             return Mmatrix;
         }
 
+        /// <summary>
+        /// Updates the current matrix by replacing the selected row with a double array.
+        /// </summary>
+        /// <param name="rowIndex">The index of the row to be replaced.</param>
+        /// <param name="rowArray">Double array to insert.</param>
+        /// <exception cref="GetRowAndColumnsException"></exception>
+        public void AddAsRow(int rowIndex, double[] rowArray)
+        {
+            if ((rowIndex > rows) || (rowIndex < 0) || (rowArray.Length > columns))
+                throw new GetRowAndColumnsException();
+
+            for (int i = 0; i < rowArray.Length; i++)
+            {
+                this[rowIndex, i] = rowArray[i];
+            }
+        }
+
+        /// <summary>
+        /// Updates the current matrix by replacing the selected column with a double array.
+        /// </summary>
+        /// <param name="colIndex">The index of the column to be replaced</param>
+        /// <param name="colArray">Double array to insert.</param>
+        /// <exception cref="GetRowAndColumnsException"></exception>
+        public void AddAsColumn(int colIndex, double[] colArray)
+        {
+            if ((colIndex > columns) || (colIndex < 0) || (colArray.Length > columns))
+                throw new GetRowAndColumnsException();
+
+            for (int i = 0; i < colArray.Length; i++)
+            {
+                this[i, colIndex] = colArray[i];
+            }
+        }
     }
 }

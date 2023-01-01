@@ -15,8 +15,8 @@
     <PackageTags>Matrix</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.jpg</PackageIcon>
-    <PackageReleaseNotes>Add MinorMatrix() and isSquare(); Updated the documentation on github</PackageReleaseNotes>
-    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Add 2 voids: AddAsRow() and AddAsColumn(); Updated the documentation on github</PackageReleaseNotes>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
