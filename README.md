@@ -1,23 +1,23 @@
 # About MatrixLib
  A simple library for working with matrices, contains the basic functionality and api that may be useful to you :)
 
-# Changes in the new version 1.0.1
+# Changes in the new version 1.0.2!
 
 Major changes:
-- **NEW!** MinorMatrix(); <br />
-Returns a new minor matrix from an existing one.
-- **NEW!** isSquare(); <br />
-Returns boolean. Checks whether the matrix is square (rows == columns)
+- **NEW!** **AddAsRow();**<br />
+Updates the current matrix by replacing the selected row with a double array.
+- **NEW!** **AddAsColumn();**<br />
+Updates the current matrix by replacing the selected column with a double array.
 - Updated the documentation in the readme.
 # Installation
 
 #### Package Manager
 
-```NuGet\Install-Package Zabulonov.MatrixLib -Version 1.0.1```
+```NuGet\Install-Package Zabulonov.MatrixLib -Version 1.0.2```
 
 #### .NET CLI
 
-```dotnet add package Zabulonov.MatrixLib --version 1.0.1```
+```dotnet add package Zabulonov.MatrixLib --version 1.0.2```
 
 # Working with the matrix
 
@@ -107,3 +107,7 @@ Returns a new transposed matrix from the current one.
 Converts the current matrix to a double array.
 - **CWGetMatrix();**<br />
 Displays the current matrix in the console.
+- **AddAsRow();**<br />
+Updates the current matrix by replacing the selected row with a double array.
+- **AddAsColumn();**<br />
+Updates the current matrix by replacing the selected column with a double array.
