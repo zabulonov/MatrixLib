@@ -127,19 +127,19 @@ namespace MatrixLib
         public static Matrix operator *(Matrix m1, Matrix m2)
         {
             Matrix result = new Matrix(m1.rows, m2.columns);
+            if ((m1.rows) != (m2.columns))
+                throw new OperationException();
 
-            if ((m1.rows == m2.rows) && (m1.columns == m2.columns))
+            for (int i = 0; i < m1.rows; i++)
             {
-                for (int i = 0; i < m1.rows; i++)
+                for (int j = 0; j < m2.columns; j++)
                 {
-                    for (int j = 0; j < m2.columns; j++)
+                    for (int k = 0; k < m2.rows; k++)
                     {
-                        result[i, j] = m1[i, j] * m2[i, j];
+                        result[i, j] += m1[i, k] * m2[k, j];
                     }
                 }
             }
-            else
-                throw new OperationException();
 
             return result;
         }
